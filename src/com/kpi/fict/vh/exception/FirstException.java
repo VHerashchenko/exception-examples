@@ -21,4 +21,10 @@ public class FirstException {
             f(npe); //recursion NullPointerException -> StackOverflowException
         }
     }
+
+    public void outputMessageErrAndOut(String message){
+        System.out.println(message + " from out");
+        System.err.println(message + " from err");
+        throw new Error();
+    }
 }

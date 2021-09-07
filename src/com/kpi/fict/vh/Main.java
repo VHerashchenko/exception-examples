@@ -8,8 +8,8 @@ public class Main {
         FirstException fExc = new FirstException();
 
         fExc.catchExceptionWithTryCatch();
-        fExc.f(null); // StackOverflowError recursion
-
+//        fExc.f(null); // StackOverflowError recursion
+        fExc.outputMessageErrAndOut("Error");
 
     }
 }
