@@ -16,5 +16,8 @@ public class Main {
         retConv.sqrExplicit(10);
         retConv.sqrIfOperator(10); // is ok;
 //        retConv.sqrIfOperator(9); //while(true);
+//        retConv.sqrExceptionThrow(10); // RUNTIME ERROR: Exception in thread "main" java.lang.RuntimeException
+
+        retConv.area(-1, -1);
     }
 }

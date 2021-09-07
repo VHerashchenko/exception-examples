@@ -25,4 +25,18 @@ public class ReturnConversion {
         }
     }
 
+    public double sqrExceptionThrow(double arg) {
+        throw new RuntimeException(); //механизм исключений позволяет НИЧЕГО НЕ ВОЗВРАЩАТЬ!
+    }
+
+    public int area(int width, int height) {
+        if (width < 0 || height < 0) {
+//            System.out.println("Bad ..."); //вычисление продолжится с неправильными данными
+//            return -1; // специальное "неправильное" значение площади
+//            System.exit(0); //завершения работы программы с кодом 0
+            throw new IllegalArgumentException("Negative sizes: w = " + width + ", h = " + height);
+        }
+        return width * height;
+    }
+
 }
