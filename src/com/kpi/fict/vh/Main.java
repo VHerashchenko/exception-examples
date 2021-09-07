@@ -11,6 +11,7 @@ public class Main {
         RuntimeExceptionExample runtimeEx = new RuntimeExceptionExample();
         TryFinallyBlock tryFinallyBlock = new TryFinallyBlock();
         TryCatchFinallyBlock tryCatchFinallyBlock = new TryCatchFinallyBlock();
+        ThrowException throwException = new ThrowException();
 
         fExc.catchExceptionWithTryCatch();
 //        fExc.f(null); // StackOverflowError recursion
@@ -33,12 +34,16 @@ public class Main {
         runtimeEx.parentThrowableGetsError();
         runtimeEx.catchExceptionInRightWay();
 
-        tryFinallyBlock.standardBlock();
+//        tryFinallyBlock.standardBlock();
 
         System.out.println(tryFinallyBlock.finallyReturns());
 
         tryCatchFinallyBlock.standardBlock();
         tryCatchFinallyBlock.nestedBlocks();
+
+        throwException.testTrowCheckedException();
+        throwException.testTrowUncheckedException(2); // caught EOFException
+//        throwException.testTrowUncheckedException(1); // Runtime
 
     }
 }
