@@ -3,6 +3,7 @@ package com.kpi.fict.vh;
 import com.kpi.fict.vh.exception.FirstException;
 import com.kpi.fict.vh.exception.NonlocalControlTransfer;
 import com.kpi.fict.vh.exception.ReturnConversion;
+import com.kpi.fict.vh.exception.RuntimeExceptionExample;
 
 public class Main {
 
@@ -10,6 +11,7 @@ public class Main {
         FirstException fExc = new FirstException();
         ReturnConversion retConv = new ReturnConversion();
         NonlocalControlTransfer nonlocalCT = new NonlocalControlTransfer();
+        RuntimeExceptionExample runtimeEx = new RuntimeExceptionExample();
 
         fExc.catchExceptionWithTryCatch();
 //        fExc.f(null); // StackOverflowError recursion
@@ -22,7 +24,14 @@ public class Main {
 
 //        retConv.area(-1, -1);
 
-        nonlocalCT.nonCatchExceptionInFirst();
+//        nonlocalCT.nonCatchExceptionInFirst();
 //        nonlocalCT.catchException();
+
+        runtimeEx.tryCatchOutputExample();
+        runtimeEx.polymorphException();
+//        runtimeEx.tryToCatchErrorWithException(); // RUNTIME EXCEPTION: Exception in thread "main" java.lang.Error
+//        runtimeEx.catchDifferentRuntimeException(); //ловит только один, если кинуть второй в catch: RUNTIME EXCEPTION: Exception in thread "main" java.lang.Error
+        runtimeEx.parentThrowableGetsError();
+        runtimeEx.catchExceptionInRightWay();
     }
 }
