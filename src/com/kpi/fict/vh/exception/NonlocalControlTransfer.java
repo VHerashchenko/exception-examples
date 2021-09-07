@@ -12,7 +12,7 @@ public class NonlocalControlTransfer {
         System.err.println("#1.out");  // работаем дальше
     }
 
-    public void nonCatchException(){
+    public void nonCatchExceptionInFirst(){
         System.err.println("#1.in");
         f();
         System.err.println("#1.out");
@@ -26,8 +26,12 @@ public class NonlocalControlTransfer {
 
     private void g() {
         System.err.println(".   .   #3.in");
-        h(); // создаем фрейм, помещаем в стек, передаем в него управление
-        System.err.println(".   .   #3.out"); // вернулись
+        try {
+            h(); // создаем фрейм, помещаем в стек, передаем в него управление
+        } catch (Error e) { // "перехватили" "летящее" исключение
+            System.err.println(".   .   #3.CATCH");  // и работаем
+        }
+        System.err.println(".   .   #3.out");  // работаем дальше
     } // выходим из текущего фрейма, кончились инструкции
 
     private void h() {

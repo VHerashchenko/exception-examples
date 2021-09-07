@@ -22,7 +22,7 @@ public class Main {
 
 //        retConv.area(-1, -1);
 
-//        nonlocalCT.nonCatchException();
-        nonlocalCT.catchException();
+        nonlocalCT.nonCatchExceptionInFirst();
+//        nonlocalCT.catchException();
     }
 }
