@@ -25,6 +25,4 @@ public class TryFinallyBlock {
 //            throw new RuntimeException(); // Exception in thread "main" java.lang.RuntimeException
         }
     }
-
-
 }
