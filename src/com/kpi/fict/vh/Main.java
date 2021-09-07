@@ -10,6 +10,7 @@ public class Main {
         NonlocalControlTransfer nonlocalCT = new NonlocalControlTransfer();
         RuntimeExceptionExample runtimeEx = new RuntimeExceptionExample();
         TryFinallyBlock tryFinallyBlock = new TryFinallyBlock();
+        TryCatchFinallyBlock tryCatchFinallyBlock = new TryCatchFinallyBlock();
 
         fExc.catchExceptionWithTryCatch();
 //        fExc.f(null); // StackOverflowError recursion
@@ -36,6 +37,7 @@ public class Main {
 
         System.out.println(tryFinallyBlock.finallyReturns());
 
+        tryCatchFinallyBlock.standardBlock();
 
     }
 }
