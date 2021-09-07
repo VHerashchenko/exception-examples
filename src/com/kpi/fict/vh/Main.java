@@ -1,6 +1,7 @@
 package com.kpi.fict.vh;
 
 import com.kpi.fict.vh.exception.*;
+import com.kpi.fict.vh.exception.extend.OverridingThrowException;
 
 public class Main {
 
@@ -12,6 +13,7 @@ public class Main {
         TryFinallyBlock tryFinallyBlock = new TryFinallyBlock();
         TryCatchFinallyBlock tryCatchFinallyBlock = new TryCatchFinallyBlock();
         ThrowException throwException = new ThrowException();
+        OverridingThrowException overridingThrowException = new OverridingThrowException();
 
         fExc.catchExceptionWithTryCatch();
 //        fExc.f(null); // StackOverflowError recursion
@@ -35,7 +37,6 @@ public class Main {
         runtimeEx.catchExceptionInRightWay();
 
 //        tryFinallyBlock.standardBlock();
-
         System.out.println(tryFinallyBlock.finallyReturns());
 
         tryCatchFinallyBlock.standardBlock();
@@ -45,5 +46,6 @@ public class Main {
         throwException.testTrowUncheckedException(2); // caught EOFException
 //        throwException.testTrowUncheckedException(1); // Runtime
 
+        overridingThrowException.handleException();
     }
 }
