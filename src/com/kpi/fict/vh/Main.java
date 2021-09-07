@@ -1,30 +1,15 @@
 package com.kpi.fict.vh;
 
+import com.kpi.fict.vh.exception.FirstException;
+
 public class Main {
 
     public static void main(String[] args) {
-//        catchExceptionWithTryCatch();
-        f(null); // StackOverflowError
-    }
+        FirstException fExc = new FirstException();
 
-    public static void trowUpException() throws Throwable {
-        Error errorThrow = new Error();
-        throw errorThrow;
-//        throw null; NullPointerException
-    }
+        fExc.catchExceptionWithTryCatch();
+        fExc.f(null); // StackOverflowError recursion
 
-    public static void catchExceptionWithTryCatch(){
-        try {
-            trowUpException();
-        } catch (Throwable c){
-        }
-    }
 
-    public static void f(NullPointerException e) {
-        try {
-            throw e;
-        } catch (NullPointerException npe) {
-            f(npe);
-        }
     }
 }
